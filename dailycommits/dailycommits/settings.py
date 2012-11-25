@@ -182,11 +182,9 @@ SOCIAL_AUTH_PIPELINE = (
     'social_auth.backends.pipeline.user.update_user_details',
 )
 
-SOCIAL_AUTH_FORCE_RANDOM_USERNAME = True
+SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
-#SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/accounts/edit-profile/'
 SOCIAL_AUTH_ERROR_KEY = 'socialauth_error'
-SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/accounts/register-success/'
 SOCIAL_AUTH_ASSOCIATE_BY_MAIL = False
 
 try:
