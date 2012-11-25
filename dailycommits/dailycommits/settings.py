@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'south',
-    'django_social_auth',
+    'social_auth',
 )
 
 # A sample logging configuration. The only tangible logging
