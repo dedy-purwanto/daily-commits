@@ -4,6 +4,14 @@
 {% block title %}Home{%endblock %}
 
 {% block content %}
-This will post your daily commits, <a href='https://github.com/kecebongsoft/daily-commits/'>read here</a>.
+<p>
+    This will post your daily commits, <a href='https://github.com/kecebongsoft/daily-commits/'>read here</a>.
+</p>
+<p>
+    <a href='{% url "socialauth_begin" 'twitter' %}'>Sign in with twitter</a>
+</p>
+
+
+
 
 {% endblock %}
