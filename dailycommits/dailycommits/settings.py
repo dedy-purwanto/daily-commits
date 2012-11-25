@@ -182,10 +182,6 @@ LOGGING = {
 TWITTER_ACCESS_TOKEN = ''
 TWITTER_ACCESS_TOKEN_SECRET = ''
 
-SOCIAL_AUTH_IMPORT_BACKENDS = (
-    'social_auth_extra_services',
-)
-
 SOCIAL_AUTH_PIPELINE = (
     'social_auth.backends.pipeline.social.social_auth_user',
     'social_auth.backends.pipeline.associate.associate_by_email',
