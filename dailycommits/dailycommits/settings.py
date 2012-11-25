@@ -106,6 +106,11 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 ROOT_URLCONF = 'dailycommits.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -162,6 +167,27 @@ LOGGING = {
 
 TWITTER_ACCESS_TOKEN = ''
 TWITTER_ACCESS_TOKEN_SECRET = ''
+
+SOCIAL_AUTH_IMPORT_BACKENDS = (
+    'social_auth_extra_services',
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_auth.backends.pipeline.social.social_auth_user',
+    'social_auth.backends.pipeline.associate.associate_by_email',
+    'social_auth.backends.pipeline.user.get_username',
+    'social_auth.backends.pipeline.user.create_user',
+    'social_auth.backends.pipeline.social.associate_user',
+    'social_auth.backends.pipeline.social.load_extra_data',
+    'social_auth.backends.pipeline.user.update_user_details',
+)
+
+SOCIAL_AUTH_FORCE_RANDOM_USERNAME = True
+SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
+#SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/accounts/edit-profile/'
+SOCIAL_AUTH_ERROR_KEY = 'socialauth_error'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/accounts/register-success/'
+SOCIAL_AUTH_ASSOCIATE_BY_MAIL = False
 
 try:
     from settings_local import *
