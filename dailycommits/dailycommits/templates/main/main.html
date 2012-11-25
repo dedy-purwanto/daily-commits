@@ -8,7 +8,11 @@
     This will post your daily commits, <a href='https://github.com/kecebongsoft/daily-commits/'>read here</a>.
 </p>
 <p>
-    <a href='{% url "socialauth_begin" 'twitter' %}'>Sign in with twitter</a>
+    {% if request.user.is_authenticated %}
+        Welcome, {{request.user.username}}
+    {% else %}
+        <a href='{% url socialauth_begin 'twitter' %}'>Sign in with twitter</a>
+    {% endif %}
 </p>
 
 
