@@ -15,3 +15,16 @@ simple and easy:
 5. You can also see the complete history of total commits in
    chronological manner from your user page
 
+
+For a repo with many contributors, you can add multiple web hooks to
+send to multiple dailycommits user such as:
+
+* `owler.io/alex/?username=ax`
+* `owler.io/kecebongsoft/?username=cebong`
+* `owler.io/moto/?username=catfighter`
+
+Using such parameter, daily-commits for `kecebongsoft` will only counted
+when there are commits under the username (such as github username)
+`cebong`. You can also identify yourself with `email` parameter.
+
+
